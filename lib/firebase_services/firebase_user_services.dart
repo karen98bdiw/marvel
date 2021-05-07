@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/painting.dart';
 import 'package:marvel/firebase_services/service_constats.dart';
 import 'package:marvel/models/api_models/api_error.dart';
 import 'package:marvel/models/api_models/api_error_constats.dart';
@@ -44,7 +43,7 @@ class FirebaseUserServices {
 
   Future<ApiResponse<CustomUser>> postUser({CustomUser user}) async {
     try {
-      var res = store
+      store
           .collection(FirebaseServiceConstats.Users_Colection_Path)
           .doc(user.id)
           .set(user.toJson());
@@ -127,6 +126,41 @@ class FirebaseUserServices {
       );
     }
   }
+
+  Future<ApiResponse<String>> addFovariteCharacter({String characterId}) async {
+    try {
+      await store
+          .collection(FirebaseServiceConstats.Users_Colection_Path)
+          .doc(auth.currentUser.uid)
+          .collection(FirebaseServiceConstats.Favorite_Colections_Path)
+          .doc(characterId)
+          .set({"id": characterId});
+      return ApiResponse(
+        done: true,
+      );
+    } catch (e) {
+      return ApiResponse(
+        done: false,
+        error: ApiError(
+          errorText: e.toString(),
+        ),
+      );
+    }
+  }
+
+  // Future<ApiResponse<String>> removeCharacterFromFavorites(
+  //     {String characterId}) async {
+  //   try {
+  //     await store.collection(FirebaseServiceConstats.Users_Colection_Path)
+  //     .doc(auth.currentUser.uid)
+  //     .collection(FirebaseServiceConstats.Favorite_Colections_Path)
+  //     .
+  //   } catch (e) {
+  //     return ApiResponse(
+  //       done: false,
+  //     );
+  //   }
+  // }
 
   Future<bool> logOut() async {
     try {
