@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:marvel/api/api_dio.dart';
 import 'package:marvel/api/characters_services.dart';
 
 class ApiBase {
@@ -6,10 +7,11 @@ class ApiBase {
 
   static final ApiBase apiBase = ApiBase._internal();
 
-  static final Dio _dio = Dio();
+  static final DioBase _dioBase = DioBase();
+  
 
   final CharachtersServices charachtersServices =
-      CharachtersServices(dio: _dio);
+      CharachtersServices(dio: _dioBase);
 
   factory ApiBase() => apiBase;
 }
