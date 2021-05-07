@@ -23,6 +23,12 @@
       "css": "home",
       "code": 59393,
       "src": "linearicons"
+    },
+    {
+      "uid": "5774d0a0e50f6eefc8be01bd761e5dd3",
+      "css": "circle-thin",
+      "code": 61915,
+      "src": "fontawesome"
     }
   ]
 }
