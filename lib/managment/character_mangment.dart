@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:marvel/api/api_base.dart';
-import 'package:marvel/api/characters_services.dart';
 import 'package:marvel/models/character_model/character_result.dart';
 import 'package:marvel/widgets/dialogs.dart';
 

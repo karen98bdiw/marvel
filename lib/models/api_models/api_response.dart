@@ -1,5 +1,4 @@
 import 'package:marvel/models/api_models/api_error.dart';
-import 'package:marvel/models/character_model/character_data.dart';
 import 'package:marvel/models/character_model/character_wrapper.dart';
 import 'package:marvel/models/custom_user.dart';
 

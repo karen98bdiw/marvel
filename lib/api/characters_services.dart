@@ -1,8 +1,6 @@
 import 'package:marvel/api/api_constats.dart';
 import 'package:marvel/api/api_dio.dart';
-import 'package:marvel/models/api_models/api_error.dart';
 import 'package:marvel/models/api_models/api_response.dart';
-import 'package:marvel/models/character_model/character_result.dart';
 import 'package:marvel/models/character_model/character_wrapper.dart';
 
 class CharachtersServices {
