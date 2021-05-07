@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:marvel/l10n/l10n.dart';
 import 'package:marvel/managment/character_mangment.dart';
 import 'package:marvel/managment/locale_managment.dart';
@@ -30,9 +29,9 @@ class MarvelApp extends StatelessWidget {
                 : Locale("en"),
             localizationsDelegates: [
               AppLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
+              // GlobalWidgetsLocalizations.delegate,
+              // GlobalWidgetsLocalizations.delegate,
+              // GlobalCupertinoLocalizations.delegate,
             ],
             supportedLocales: L10n.all,
             navigatorKey: GlobalKeys.navigatorKey,

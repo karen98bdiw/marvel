@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:marvel/marvel_app.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 Future<void> run() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -10,8 +12,11 @@ Future<void> run() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-
-  runApp(MarvelApp());
+  SharedPreferences.getInstance().then((prefs) {
+    runApp(
+      MarvelApp(),
+    );
+  });
 }
 
 Future<void> main() async {

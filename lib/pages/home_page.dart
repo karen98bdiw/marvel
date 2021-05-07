@@ -3,7 +3,6 @@ import 'package:marvel/managment/character_mangment.dart';
 import 'package:marvel/managment/locale_managment.dart';
 import 'package:marvel/managment/user_managment.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   static final routeName = "HomePage";
