@@ -1,4 +1,6 @@
 import 'package:marvel/models/api_models/api_error.dart';
+import 'package:marvel/models/character_model/character_data.dart';
+import 'package:marvel/models/character_model/character_wrapper.dart';
 import 'package:marvel/models/custom_user.dart';
 
 class ApiResponse<T> {
@@ -11,8 +13,13 @@ class ApiResponse<T> {
     switch (T) {
       case CustomUser:
         return CustomUser.fromJson(this.response);
-
         break;
+        case CharacterWrapper:
+        return CharacterWrapper.fromJson(this.response);
+        break;
+        case Data:
+        return Data.fromJson(this.response);
+        break; 
       default:
         this.response as T;
     }
