@@ -1,5 +1,6 @@
 class ApiError {
   final String errorText;
+  final String status;
 
-  ApiError({this.errorText});
+  ApiError({this.errorText, this.status});
 }
