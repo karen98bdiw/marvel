@@ -10,32 +10,38 @@ class CharachtersServices {
 
   CharachtersServices({this.dio});
 
+  Future<ApiResponse<CharacterWrapper>> getAllCharacters() async {
+    var responseData = await dio.get<CharacterWrapper>(
+        endPoint: ApiConstats.All_Character_GEt);
 
-Future<ApiResponse<CharacterWrapper>> character() async {
-    var responseData = await dio.get<CharacterWrapper>(endPoint:ApiConstats.All_Character_GEt);
-
-    if(responseData.done){
-      return ApiResponse(done: true,response:responseData.response);
+    if (responseData.done) {
+      return ApiResponse(done: true, response: responseData.response);
     }
-    else ApiResponse(done: false,error: responseData.error);
+    return ApiResponse(done: false, error: responseData.error);
   }
 
-  Future<ApiResponse<List<Character>>> getAllCharacters() async {
-    var responseData = await dio.get<List<Character>>(endPoint:ApiConstats.All_Character_GEt);
-      
-    if(responseData.done){
-      return ApiResponse(done: true,response:responseData.response);
-    }else ApiResponse(done: false,error: responseData.error);
+  Future<ApiResponse<CharacterWrapper>> getCharacterByName(
+      {String name}) async {
+    var responseData = await dio.get<CharacterWrapper>(
+        endPoint: ApiConstats.All_Character_GEt,
+        additionalParams: {
+          ApiConstats.Search_Name_Query: name,
+        });
+
+    if (responseData.done) {
+      return ApiResponse(done: true, response: responseData.response);
+    }
+    return ApiResponse(done: false, error: responseData.error);
   }
 
-  
-  Future<ApiResponse<Character>> getByName() async {
-    var responseData = await dio.get<Character>(endPoint:ApiConstats.All_Character_GEt);
+  Future<ApiResponse<CharacterWrapper>> getCharacterById({String id}) async {
+    var responseData = await dio.get<CharacterWrapper>(
+      endPoint: ApiConstats.All_Character_GEt + "/" + id,
+    );
 
-    if(responseData.done){
-      return ApiResponse(done: true,response:responseData.response);
-    }else ApiResponse(done: false,error: responseData.error);
+    if (responseData.done) {
+      return ApiResponse(done: true, response: responseData.response);
+    }
+    return ApiResponse(done: false, error: responseData.error);
   }
-
-
 }

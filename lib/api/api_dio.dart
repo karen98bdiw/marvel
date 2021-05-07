@@ -11,12 +11,18 @@ class DioBase {
 
   factory DioBase() => dioBase;
 
-  Future<ApiResponse<T>> get<T>({String endPoint}) async {
+  Future<ApiResponse<T>> get<T>(
+      {String endPoint, Map<String, dynamic> additionalParams}) async {
+    var params = ApiConstats.params;
+    if (additionalParams != null) {
+      additionalParams.forEach((key, value) {
+        params[key] = value;
+      });
+    }
     try {
       var res = await _dio.get(ApiConstats.BaseUrl + endPoint,
-          queryParameters: ApiConstats.params,
+          queryParameters: params,
           options: Options(headers: ApiConstats.headers));
-
       if (res.statusCode == 200) {
         return ApiResponse<T>(
           done: true,
@@ -28,7 +34,6 @@ class DioBase {
         error: ApiError(errorText: res.data.toString()),
       );
     } catch (e) {
-      print("api error ${(e as DioError).response}");
       return ApiResponse<T>(
         done: false,
         error: ApiError(errorText: e.toString()),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:marvel/l10n/l10n.dart';
+import 'package:marvel/managment/character_mangment.dart';
 import 'package:marvel/managment/locale_managment.dart';
 import 'package:marvel/managment/user_managment.dart';
 import 'package:marvel/pages/home_page.dart';
@@ -21,6 +22,7 @@ class MarvelApp extends StatelessWidget {
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (c) => UserManagment()),
+            ChangeNotifierProvider(create: (c) => CharacterManagment()),
           ],
           child: MaterialApp(
             locale: localeManagment.locale != null
@@ -28,7 +30,7 @@ class MarvelApp extends StatelessWidget {
                 : Locale("en"),
             localizationsDelegates: [
               AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],

@@ -9,15 +9,15 @@ class Character {
   Character({this.description, this.id, this.name, this.thumbnail});
 
   Map<String, dynamic> toJson() => {
-    'id':id,
-    'name':name,
-    'description':description,
-    'thumbnail':thumbnail
-  };
-  factory Character.fromJson(json) =>Character(
-    description: json['description'],
-    id: json['id'],
-    name: json['name'],
-    thumbnail: json['thumbnail']
-  );
+        'id': id,
+        'name': name,
+        'description': description,
+        'thumbnail': thumbnail
+      };
+  factory Character.fromJson(json) => Character(
+        description: json['description'],
+        id: json['id'],
+        name: json['name'],
+        thumbnail: Thumbnail.fromJson(json['thumbnail']),
+      );
 }

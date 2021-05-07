@@ -14,12 +14,10 @@ class ApiResponse<T> {
       case CustomUser:
         return CustomUser.fromJson(this.response);
         break;
-        case CharacterWrapper:
+      case CharacterWrapper:
         return CharacterWrapper.fromJson(this.response);
         break;
-        case Data:
-        return Data.fromJson(this.response);
-        break; 
+
       default:
         this.response as T;
     }
