@@ -5,7 +5,9 @@ import 'package:marvel/managment/character_mangment.dart';
 import 'package:marvel/managment/locale_managment.dart';
 import 'package:marvel/managment/user_managment.dart';
 import 'package:marvel/pages/home_page.dart';
-import 'package:marvel/pages/onBoard.dart';
+import 'package:marvel/pages/on_board.dart';
+import 'package:marvel/pages/sign_in_page.dart';
+import 'package:marvel/pages/sign_up_page.dart';
 import 'package:marvel/utils/global_keys.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -20,6 +22,7 @@ class MarvelApp extends StatelessWidget {
         w,
       ) {
         LocaleManagment localeManagment = Provider.of<LocaleManagment>(c);
+
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (c) => UserManagment()),
@@ -29,6 +32,9 @@ class MarvelApp extends StatelessWidget {
             locale: localeManagment.locale != null
                 ? localeManagment.locale
                 : Locale("en"),
+            // theme: themeNotifier.getTheme() == null
+            //     ? themeNotifier.darkThem
+            //     : themeNotifier.getTheme(),
             localizationsDelegates: [
               AppLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
@@ -41,6 +47,8 @@ class MarvelApp extends StatelessWidget {
             routes: {
               OnBoard.routeName: (c) => OnBoard(),
               HomePage.routeName: (c) => HomePage(),
+              SignInPage.routeName: (c) => SignInPage(),
+              SignUpPage.routeName: (c) => SignUpPage(),
             },
           ),
         );

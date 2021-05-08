@@ -148,19 +148,40 @@ class FirebaseUserServices {
     }
   }
 
-  // Future<ApiResponse<String>> removeCharacterFromFavorites(
-  //     {String characterId}) async {
-  //   try {
-  //     await store.collection(FirebaseServiceConstats.Users_Colection_Path)
-  //     .doc(auth.currentUser.uid)
-  //     .collection(FirebaseServiceConstats.Favorite_Colections_Path)
-  //     .
-  //   } catch (e) {
-  //     return ApiResponse(
-  //       done: false,
-  //     );
-  //   }
-  // }
+  Future<ApiResponse<String>> removeCharacterFromFavorites(
+      {String characterId}) async {
+    try {
+      await store
+          .collection(FirebaseServiceConstats.Users_Colection_Path)
+          .doc(auth.currentUser.uid)
+          .collection(FirebaseServiceConstats.Favorite_Colections_Path)
+          .doc(characterId)
+          .delete();
+      return ApiResponse(
+        done: true,
+      );
+    } catch (e) {
+      return ApiResponse(
+        done: false,
+      );
+    }
+  }
+
+  getFavorites({String userId}) async {
+    List<String> favs = [];
+
+    var res = await store
+        .collection(FirebaseServiceConstats.Users_Colection_Path)
+        .doc(auth.currentUser.uid)
+        .collection(FirebaseServiceConstats.Favorite_Colections_Path)
+        .get();
+    res.docs.forEach((element) {
+      favs.add(
+        element.data()["id"].toString(),
+      );
+    });
+    return favs;
+  }
 
   Future<bool> logOut() async {
     try {

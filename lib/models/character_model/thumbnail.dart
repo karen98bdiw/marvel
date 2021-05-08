@@ -6,14 +6,9 @@ class Thumbnail {
     this.path,
   });
 
-  String  get imageUrl  =>"$path$end";
+  String get imageUrl => "$path" + "." + "$end";
 
-  Map<String, dynamic> toJson() => {
-    "path":path,
-    "end":end
-  };
-  factory Thumbnail.fromJson(json) => Thumbnail(
-    path: json['path'],
-    end: json['end']
-  ); 
+  Map<String, dynamic> toJson() => {"path": path, "extension": end};
+  factory Thumbnail.fromJson(json) =>
+      Thumbnail(path: json['path'], end: json['extension']);
 }

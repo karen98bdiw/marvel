@@ -32,13 +32,13 @@ class ThemeNotifier with ChangeNotifier {
             fontWeight: FontWeight.w600,
             fontFamily: "OpenSans",
             fontStyle: FontStyle.normal,
-            color: Colors.black),
+            color: Colors.white),
         headline3: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w600,
             fontFamily: "OpenSans",
             fontStyle: FontStyle.normal,
-            color: Colors.black),
+            color: Colors.white),
         headline4: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w600,
@@ -50,7 +50,7 @@ class ThemeNotifier with ChangeNotifier {
             fontWeight: FontWeight.w600,
             fontFamily: "OpenSans",
             fontStyle: FontStyle.normal,
-            color: Colors.black)),
+            color: Colors.white)),
     buttonColor: Color.fromRGBO(255, 255, 255, 0.3),
   );
 
@@ -75,25 +75,25 @@ class ThemeNotifier with ChangeNotifier {
             fontWeight: FontWeight.w600,
             fontFamily: "OpenSans",
             fontStyle: FontStyle.normal,
-            color: Colors.white),
+            color: Colors.black),
         headline3: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w600,
             fontFamily: "OpenSans",
             fontStyle: FontStyle.normal,
-            color: Colors.white),
+            color: Colors.black),
         headline4: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w600,
             fontFamily: "OpenSans",
             fontStyle: FontStyle.normal,
-            color: Colors.white),
+            color: Colors.black),
         headline5: TextStyle(
             fontSize: 10,
             fontWeight: FontWeight.w600,
             fontFamily: "OpenSans",
             fontStyle: FontStyle.normal,
-            color: Colors.white)),
+            color: Colors.black)),
     buttonColor: Color.fromRGBO(255, 255, 255, 0.3),
   );
 }

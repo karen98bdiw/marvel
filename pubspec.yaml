@@ -66,6 +66,13 @@ flutter:
     - assets/fonts/
     - assets/json/
     - assets/image/
+    - assets/images/card_img_1.png
+    - assets/images/card_img_2.png
+    - assets/images/card_img_3.png
+    - assets/images/card_img_4.png
+    - assets/images/desc_img.png
+    - assets/images/back.png
+    - assets/images/on_board.png
 
   # assets:
   #   - images/a_dot_burr.jpeg
