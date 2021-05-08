@@ -19,7 +19,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   void initState() {
     characterManagment =
         Provider.of<CharacterManagment>(context, listen: false);
-    characterManagment.getCharacterById(id: widget.characterId);
+    characterManagment.getCharacterDescription(id: widget.characterId);
 
     super.initState();
   }
@@ -36,7 +36,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       body: Container(
         child: Consumer<CharacterManagment>(
           builder: (c, ch, w) =>
-              ch.characterData != null ? _body() : Text("not found"),
+              ch.characterDescription != null ? _body() : Text("not found"),
         ),
         height: double.infinity,
         width: double.infinity,
@@ -63,7 +63,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(characterManagment
-                              .characterData.thumbnail.imageUrl),
+                              .characterDescription.thumbnail.imageUrl),
                           fit: BoxFit.cover)),
                 ),
                 Container(
@@ -71,7 +71,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       left: 15,
                       top: MediaQuery.of(context).size.height * 0.45,
                       bottom: 15),
-                  child: Text(characterManagment.characterData.name,
+                  child: Text(characterManagment.characterDescription.name,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 25,
@@ -89,7 +89,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             ),
             Container(
               margin: EdgeInsets.only(left: 15),
-              child: Text(characterManagment.characterData.description,
+              child: Text(characterManagment.characterDescription.description,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,

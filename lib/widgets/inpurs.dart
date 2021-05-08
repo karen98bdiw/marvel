@@ -6,10 +6,12 @@ class CustomFormInput extends StatelessWidget {
   final IconData prefix;
   final FormFieldSetter<String> onSaved;
   final FormFieldValidator<String> validator;
+  final ValueChanged<String> onChanged;
   final TextEditingController controller;
   final bool obscureText;
 
   CustomFormInput({
+    this.onChanged,
     this.hintText,
     this.prefix,
     this.onSaved,
@@ -21,6 +23,7 @@ class CustomFormInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       obscureText: obscureText,
       controller: controller,
       onSaved: onSaved,

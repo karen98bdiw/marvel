@@ -7,6 +7,7 @@ import 'package:marvel/widgets/buttons.dart';
 import 'package:marvel/widgets/inpurs.dart';
 import 'package:marvel/widgets/style_color.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignUpPage extends StatefulWidget {
   static final routeName = 'SingUpPage';
@@ -69,7 +70,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 padding: const EdgeInsets.only(top: 74),
                 child: Text(
-                  "Log In",
+                  AppLocalizations.of(context).signUpButton,
                   style: TextStyle(color: Colors.white, fontSize: 32),
                 ),
               ),
@@ -115,7 +116,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   onTap: () {
                     onSignUp();
                   },
-                  text: 'REGISTRATION',
+                  text: AppLocalizations.of(context).signUpButton,
                 ),
               ),
               Container(
@@ -129,7 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Navigator.of(context)
                         .pushReplacementNamed(SignInPage.routeName);
                   },
-                  text: 'LOGIN',
+                  text: AppLocalizations.of(context).signInButton,
                 ),
               )
             ],

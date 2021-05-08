@@ -2,5 +2,65 @@
     "language": "English",
     "@language":{
         "description":"this is English"
+    },
+    "signInButton":"LOGIN",
+    "@signInButton":{
+        "description":"this is English"
+    },
+    "signUpButton": "REGISTRATION",
+    "@signUpButton":{
+        "description":"this is English"
+    },
+    "hintText": "UserName",
+    "@hintText":{
+        "description":"this is English"
+    },
+    "hintText1": "Password",
+    "@hintText1":{
+        "description":"this is English"
+    },
+    "hintText2": "Email",
+    "@hintText2":{
+        "description":"this is English"
+    },
+    "button": "SKIP",
+    "@button":{
+        "description":"this is English"
+    },
+    "welcome":"Welcom to the Marvel Universe",
+    "@welcome":{
+        "description":"this is English"
+    },
+    "textLogin": "Login",
+    "@textLogin":{
+        "description":"this is English"
+    },
+    "forgotPass": "Forgot Password?",
+    "@forgotPass":{
+        "description":"this is English"
+    },
+    "back": "Back",
+    "@back":{
+        "description":"this is English"
+    },
+    "home": "Home",
+    "@home":{
+        "description":"this is English"
+    },
+    "favorite": "Favorite",
+    "@favorite":{
+        "description":"this is English"
+    },
+    "s": "New",
+    "@s":{
+        "description":"this is English"
+    },
+    "setting": "Setting",
+    "@setting":{
+        "description":"this is English"
+    },
+    "search": "Search",
+    "@search":{
+        "description":"this is English"
     }
 }

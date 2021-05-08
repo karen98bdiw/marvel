@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marvel/pages/all_charactars.dart';
 import 'package:marvel/pages/favorite_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   static final routeName = "HomePageUser";
@@ -20,9 +21,10 @@ class _HomePageState extends State<HomePage> {
         unselectedItemColor: Colors.white,
         items: [
           BottomNavigationBarItem(
-              label: "All Characters", icon: Icon(Icons.menu)),
+              label: AppLocalizations.of(context).home, icon: Icon(Icons.menu)),
           BottomNavigationBarItem(
-              label: "Favorites", icon: Icon(Icons.favorite)),
+              label: AppLocalizations.of(context).favorite,
+              icon: Icon(Icons.favorite)),
         ],
         onTap: (index) {
           setState(() {

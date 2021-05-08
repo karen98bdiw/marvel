@@ -16,6 +16,7 @@ class UserManagment extends ChangeNotifier {
     var res = await FirebaseBase()
         .userServices
         .singIn(email: email, password: password);
+
     if (res.done) {
       curentUser = res.data;
 

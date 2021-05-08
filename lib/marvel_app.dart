@@ -21,37 +21,36 @@ class MarvelApp extends StatelessWidget {
         c,
         w,
       ) {
-        LocaleManagment localeManagment = Provider.of<LocaleManagment>(c);
-
-        return MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (c) => UserManagment()),
-            ChangeNotifierProvider(create: (c) => CharacterManagment()),
-          ],
-          child: MaterialApp(
-            locale: localeManagment.locale != null
-                ? localeManagment.locale
-                : Locale("en"),
-            // theme: themeNotifier.getTheme() == null
-            //     ? themeNotifier.darkThem
-            //     : themeNotifier.getTheme(),
-            localizationsDelegates: [
-              AppLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
+        return Consumer<LocaleManagment>(builder: (c, ch, w) {
+          print(ch.locale);
+          return MultiProvider(
+            providers: [
+              ChangeNotifierProvider(create: (c) => UserManagment()),
+              ChangeNotifierProvider(create: (c) => CharacterManagment()),
             ],
-            supportedLocales: L10n.all,
-            navigatorKey: GlobalKeys.navigatorKey,
-            initialRoute: OnBoard.routeName,
-            routes: {
-              OnBoard.routeName: (c) => OnBoard(),
-              HomePage.routeName: (c) => HomePage(),
-              SignInPage.routeName: (c) => SignInPage(),
-              SignUpPage.routeName: (c) => SignUpPage(),
-            },
-          ),
-        );
+            child: MaterialApp(
+              locale: ch.locale != null ? ch.locale : Locale("hy"),
+              // theme: themeNotifier.getTheme() == null
+              //     ? themeNotifier.darkThem
+              //     : themeNotifier.getTheme(),
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: L10n.all,
+              navigatorKey: GlobalKeys.navigatorKey,
+              initialRoute: OnBoard.routeName,
+              routes: {
+                OnBoard.routeName: (c) => OnBoard(),
+                HomePage.routeName: (c) => HomePage(),
+                SignInPage.routeName: (c) => SignInPage(),
+                SignUpPage.routeName: (c) => SignUpPage(),
+              },
+            ),
+          );
+        });
       },
     );
   }

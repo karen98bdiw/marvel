@@ -50,7 +50,12 @@ class _AllCharactersPageState extends State<AllCharactersPage> {
               floating: _floating,
               expandedHeight: 120.0,
               flexibleSpace: FlexibleSpaceBar(
-                background: AppBarSliver(),
+                background: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded(child: AppBarSliver()),
+                  ],
+                ),
               )),
         ];
       },

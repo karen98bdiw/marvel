@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:marvel/models/api_models/api_error.dart';
 import 'package:marvel/models/api_models/api_response.dart';
+import 'package:marvel/widgets/dialogs.dart';
 import 'api_constats.dart';
 
 class DioBase {

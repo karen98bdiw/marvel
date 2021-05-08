@@ -2,5 +2,66 @@
     "language": "Հայերեն",
     "@language":{
         "description":"this is English"
+    },
+    "signInButton":"Մուտք գործել",
+     "@signInButton":{
+        "description":"this is English"
+    },
+    
+    "signUpButton": "Գրանցվել",
+     "@signUpButton":{
+        "description":"this is English"
+    },
+    "hintText": "Անուն",
+     "@hintText":{
+        "description":"this is English"
+    },
+    "hintText1": "Գաղտնաբառ",
+     "@hintText1":{
+        "description":"this is English"
+    },
+    "hintText2": "էլ. հասցե",
+     "@hintText2":{
+        "description":"this is English"
+    },
+    "button": "Բաց թողնել",
+     "@button":{
+        "description":"this is English"
+    },
+    "welcome":"Բարի գալուստ Marvel Universe",
+     "@welcome":{
+        "description":"this is English"
+    },
+    "textLogin": "Մուտք գործել",
+     "@textLogin":{
+        "description":"this is English"
+    },
+    "forgotPass": "Մոռացե՞լ եք գաղտնաբառը",
+     "@forgotPass":{
+        "description":"this is English"
+    },
+    "back": "Հետ",
+     "@back":{
+        "description":"this is English"
+    },
+    "home": "Տուն",
+     "@home":{
+        "description":"this is English"
+    },
+    "favorite": "Ընտրված",
+     "@favorite":{
+        "description":"this is English"
+    },
+    "s": "Նոր",
+     "@s":{
+        "description":"this is English"
+    },
+    "setting": "Կարգավորումներ",
+     "@setting":{
+        "description":"this is English"
+    },
+    "search": "Փնտրել" ,
+    "@search": {
+        "description":"this is English"
     }
 }

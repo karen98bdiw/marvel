@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:marvel/pages/sign_in_page.dart';
 import 'package:marvel/widgets/buttons.dart';
 import 'package:marvel/widgets/style_color.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnBoard extends StatefulWidget {
   static final routeName = 'OnBoard';
@@ -72,7 +73,8 @@ class _OnBoardState extends State<OnBoard> {
             width: MediaQuery.of(context).size.width,
             child: Container(
               child: Text(
-                "Welcome to the Marvel \n Universe",
+                AppLocalizations.of(context).welcome,
+                // AppLocalizations.of(context).language.,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,
@@ -123,7 +125,7 @@ class _OnBoardState extends State<OnBoard> {
                 Navigator.of(context)
                     .pushReplacementNamed(SignInPage.routeName);
               },
-              text: 'Skip',
+              text: AppLocalizations.of(context).button,
             ),
           )
         ],
